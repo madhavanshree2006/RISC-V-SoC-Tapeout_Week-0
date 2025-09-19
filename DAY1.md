@@ -1,87 +1,109 @@
-# RISC-V SoC Tapeout – Week 0
+# 🌟 RISC-V SoC Tapeout – Week 0  
 
-## 🚩 Getting Started with Digital VLSI SoC Design and Planning
-
-![Chip Modeling](https://github.com/user-attachments/assets/e2de537b-9671-4087-8e69-60fd8856c925)
-
-- In **chip modeling**, the first step is to check whether the **application itself is correct ✅** or **wrong ❌**.  
-- For that, we build in a **C code environment** using the **GCC compiler** and the given chip specifications.  
-- **Rule:** `O0 == O1` must hold true 🟰. Only then the **chip specification is valid 👍**.  
-
----
-
-## Step 2: RTL Development
-
-![RTL Development](https://github.com/user-attachments/assets/bbe5f959-7980-4ebc-b898-ebca21f9cad7)
-
-- The soft copy of the hardware is developed using **RTL** in different languages:  
-  1. **Verilog**  
-  2. **VHDL**  
-  3. **Bluespec**  
-  4. **Cecile**  
-
-⚠️ **Important:** While writing the code, make sure that the **Verilog code does not contain any constructs or primitives that are not synthesizable.**  
-
----
-
-## Step 3: ASIC Flow – Processor & Peripherals ⚙️
-
-<img width="1496" height="552" alt="image" src="https://github.com/user-attachments/assets/45d56169-828a-42ae-a75c-eb15b32cc090" />
-
--Moving to next is ASIC flow were we would build the processors and Peripherals/IPs ⚙️
-
-### 🟢 Processor
+## 🚀 Getting Started with Digital VLSI SoC Design & Planning  
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/aec0a92c-c618-4777-9bfa-4b563ef4106b" width="600" alt="2020-03-30-image-2">
+<img src="https://github.com/user-attachments/assets/e2de537b-9671-4087-8e69-60fd8856c925" width="700" alt="Chip Modeling">
 </p>
 
-- After **synthesis**, a processor design becomes a **Gate-Level Netlist** (collection of logic gates).  
-- Fully digital and directly mapped to **standard cells** in the library.  
+### 🟢 Step 1: Application & Chip Modeling  
+- ✅ First, verify whether the **application itself is correct** or ❌ **wrong**.  
+- 🖥️ Build the design in **C language** using the **GCC compiler** and given chip specifications.  
+- 📏 **Golden Rule:**  
 
-### 🔵 Peripherals / IPs
-
-<p align="center">
-<img src="https://github.com/user-attachments/assets/00a07b66-82d5-4ce0-a809-76a6486ca2e6" width="500" alt="ARMSoCBlockDiagram svg">
-</p>
-
-- These are **custom** or **ready-made small circuit design blocks** connected to the processor inside a chip.  
-
-**Types of Peripherals:**  
-
-**1️⃣ Digital Macros (Synthesizable RTL)**  
-- Written in Verilog/VHDL  
-- Can be synthesized into gates (just like the processor)  
-- **Examples:** UART, SPI, I2C  
-
-**2️⃣ Analog IPs (Functional RTL / Hard Macros)**  
-- Cannot be synthesized in the same way  
-- Usually pre-designed circuits (**hard blocks**)  
-- **Examples:** PLL, ADC, DAC, SERDES  
+    ```text
+    O0 == O1   → chip specification is valid 👍
+    ```
 
 ---
 
-## Step 4: SoC Integration
+## 🏗️ Step 2: RTL Development  
 
-<img width="1428" height="656" alt="image" src="https://github.com/user-attachments/assets/a39762ba-b4dc-4182-bc62-f021c47ef280" />
+<p align="center">
+<img src="https://github.com/user-attachments/assets/bbe5f959-7980-4ebc-b898-ebca21f9cad7" width="700" alt="RTL Development">
+</p>
 
-- Arrange **processor and peripherals** to create a fully functional **SoC 💻**.  
+- ✍️ Hardware is described in **Register Transfer Level (RTL)** using languages like:  
+  1️⃣ Verilog  
+  2️⃣ VHDL  
+  3️⃣ Bluespec  
+  4️⃣ Cecile  
+
+⚠️ **Critical Note:**  
+- ⛔ Do **not** use non-synthesizable constructs in Verilog.  
+- ✅ Keep the design **synthesizable & portable**.  
 
 ---
 
-## Step 5: OpenLane Flow (RTL → GDSII)
+## ⚙️ Step 3: ASIC Flow – Processor & Peripherals  
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/fc760372-935e-48ae-ad1d-7c9521fb3ac3" width="700" alt="1746515610094">
+<img src="https://github.com/user-attachments/assets/45d56169-828a-42ae-a75c-eb15b32cc090" width="700" alt="ASIC Flow">
 </p>
+
+### 🔹 Processor (CPU Core)  
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/aec0a92c-c618-4777-9bfa-4b563ef4106b" width="600" alt="Processor Block">
+</p>
+
+-  After **synthesis**, the processor becomes a **Gate-Level Netlist (GLN)**.  
+- 🧩 GLN = collection of **logic gates** mapped to **standard cell libraries**.  
 
 ---
 
+### 🔹 Peripherals / IPs  
+
 <p align="center">
-<img src="https://github.com/user-attachments/assets/6ec162bb-2fdf-450d-8a29-cd801159984d" width="800" alt="image">
+<img src="https://github.com/user-attachments/assets/00a07b66-82d5-4ce0-a809-76a6486ca2e6" width="500" alt="Peripherals Block">
 </p>
 
-- Use the **open-source OpenLane flow** for complete SoC design.  
+- 🛠️ **Peripherals** are reusable blocks connected to the processor.  
+- They enhance functionality such as **I/O, communication, and timing**.  
 
-**✅ Final Rule:** A perfect SoC satisfies:  
-`O1 == O2 == O3 == O4` 👌
+| 🔧 Type | 📖 Description | 💡 Examples |
+|---------|----------------|-------------|
+| **Digital Macros (Synthesizable RTL)** | Written in Verilog/VHDL, synthesizable into gates | UART, SPI, I²C |
+| **Analog IPs (Hard Macros)** | Pre-designed hard layouts, not synthesizable | PLL, ADC, DAC, SERDES |
+
+---
+
+## 🔗 Step 4: SoC Integration  
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/a39762ba-b4dc-4182-bc62-f021c47ef280" width="700" alt="SoC Integration">
+</p>
+
+- 🧩 Combine **processor + peripherals** into one **System-on-Chip (SoC)**.  
+- ⚡ Ensure correct **interconnects, memory mapping, and power distribution**.  
+- 🏆 End result = a **functional chip** ready for implementation.  
+
+---
+
+## 🛠️ Step 5: OpenLane Flow (RTL → GDSII)  
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/fc760372-935e-48ae-ad1d-7c9521fb3ac3" width="700" alt="OpenLane Flow">
+</p>
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/6ec162bb-2fdf-450d-8a29-cd801159984d" width="700" alt="OpenLane Flow 2">
+</p>
+
+- 🏗️ **OpenLane** is the open-source ASIC flow used for **tapeout preparation**.  
+- 🔄 Flow includes:  
+
+    ```text
+    RTL → Netlist → Floorplan → Placement → Routing → GDSII
+    ```
+
+- 🖼️ **GDSII** = Final chip mask layout used for fabrication.  
+
+---
+
+## ✅ Final Golden Rule  
+
+For a valid & correct SoC →  
+
+```text
+O1 == O2 == O3 == O4
