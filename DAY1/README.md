@@ -105,5 +105,12 @@
 
 For a valid & correct SoC →  
 
-```text
+
 O1 == O2 == O3 == O4
+---
+
+<h1 align="center">🌟 RISC-V SoC Tapeout – Week 0</h1> 
+<br><br><br>
+
+
+
