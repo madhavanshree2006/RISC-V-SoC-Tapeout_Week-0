@@ -1,5 +1,5 @@
-# 🌟 RISC-V SoC Tapeout – Week 0  
-
+<h1 align="center">🌟 RISC-V SoC Tapeout – Week 0</h1> 
+<br><br><br>
 ## 🚀 Getting Started with Digital VLSI SoC Design & Planning  
 
 <p align="center">
