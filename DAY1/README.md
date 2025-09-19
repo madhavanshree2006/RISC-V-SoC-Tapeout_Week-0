@@ -109,10 +109,9 @@ For a valid & correct SoC →
 O1 == O2 == O3 == O4
 ---
 
-<h1 align="center">🌟 🔳 Task 2: Tools Installation Instructions </h1> 
+<h1 align="center"> 🔳 Tools Installation Instructions 🌟 </h1> 
 <br><br><br>
 
-# 🔳 Task 2: Tools Installation Instructions  
 
 📌 **System Requirements**:  
 - 🐧 Ubuntu 20.04+ (✅ I used Ubuntu 22.04)  
