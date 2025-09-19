@@ -108,6 +108,7 @@ For a valid & correct SoC →
 
 O1 == O2 == O3 == O4
 ---
+<br><br><br>
 
 <h1 align="center"> 🔳 Tools Installation Instructions 🌟 </h1> 
 <br><br><br>
