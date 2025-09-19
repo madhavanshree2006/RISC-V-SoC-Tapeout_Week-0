@@ -48,3 +48,4 @@ and understood the big picture of the **SoC design & tapeout process**.
 - **GTKWave** → Waveform visualization & debugging 📊  
 
 ---
+👉 Main Repo Link : [https://github.com/madhavanshree2006/RISC-V-SoC-Tapeout-Program] 
