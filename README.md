@@ -1,4 +1,4 @@
-<h1 align="center">🔳 RISC-V SoC Tapeout Program — Week 0</h1> 
+<h1 align="center">🔳 RISC-V SoC Tapeout Program — Week 0️⃣</h1> 
 
 <p align="center">
   <img src="https://img.shields.io/badge/RISC--V-SoC%20Tapeout-blue?style=for-the-badge&logo=riscv" />
